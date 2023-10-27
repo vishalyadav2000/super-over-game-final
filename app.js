@@ -20,11 +20,17 @@ const possibleOutcomes = [0, 1, 2, 3, 4, 6, "W"];
 // Iteration 3: Write a Game over function
 function gameOver() {
   gameOverAudio.play();
-  if (team1Score > team2Score) alert("MI wins");
-  if (team2Score > team1Score) alert("DC wins");
-  if (team2Score === team1Score) alert("It is another superover!");
+   setTimeout(function (){
+      if(team1Score > team2Score){
+        alert('IND WINS');
+      } else if(team2Score > team1Score){
+        alert('PAK WINS');
+      } else if(team1Score === team2Score){
+        alert('Its Another SuperOver')
+      }
+    },1000)
+ 
 }
-
 // Iteration 4: Write an update score function
 function updateScore() {
   $team1Score.textContent = team1Score;
